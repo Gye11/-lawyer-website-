@@ -1,0 +1,106 @@
+body {
+  margin: 0;
+  background: #0b0b0b;
+}
+
+/* INTRO */
+#intro {
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(circle at center, #111 40%, #000 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  overflow: hidden;
+}
+
+.intro-inner {
+  position: relative;
+}
+
+/* LOGO */
+.logo {
+  width: 160px;
+  stroke: #c8a13a;
+  stroke-width: 2;
+  fill: none;
+
+  stroke-linecap: round;
+  stroke-linejoin: round;
+
+  stroke-dasharray: 600;
+  stroke-dashoffset: 600;
+  animation-timing-function: cubic-bezier(0.65, 0.05, 0.36, 1);
+  animation:
+    draw 2.2s cubic-bezier(0.65, 0.05, 0.36, 1) forwards,
+    glow 1s ease 2.2s forwards;
+}
+
+/* GOLD SWEEP */
+.gold-sweep {
+  position: absolute;
+  top: 0;
+  left: -150%;
+  width: 200%;
+  height: 100%;
+
+  background: linear-gradient(
+    120deg,
+    transparent 40%,
+    rgba(255, 255, 255, 0.15) 50%,
+    transparent 60%
+  );
+
+  transform: skewX(-20deg);
+  animation: sweep 1.2s ease 2.3s forwards;
+}
+
+/* Sketch */
+@keyframes draw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+/* Glow */
+@keyframes glow {
+  from {
+    filter: drop-shadow(0 0 0px #c8a13a);
+  }
+  to {
+    filter: drop-shadow(0 0 12px #c8a13a);
+  }
+}
+
+/* Shine sweep */
+@keyframes sweep {
+  to {
+    left: 150%;
+  }
+}
+
+/* FADE OUT */
+#intro.fade-out {
+  animation: fadeOut 0.8s ease forwards;
+}
+
+@keyframes fadeOut {
+  to {
+    opacity: 0;
+    transform: scale(1.05);
+  }
+}
+
+/* MAIN CONTENT */
+#main-content {
+  opacity: 0;
+  transform: translateY(10px);
+  transition: all 1s ease;
+  padding: 40px;
+}
+
+#main-content.show {
+  opacity: 1;
+  transform: translateY(0);
+}
