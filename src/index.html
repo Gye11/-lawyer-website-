@@ -3,90 +3,60 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Lawyer</title>
 
     <style>
       body {
         margin: 0;
-        background: #050505;
-        font-family: Arial, sans-serif;
-      }
-
-      /* INTRO */
-      #intro {
-        position: fixed;
-        inset: 0;
+        background: #0a0a0a;
         display: flex;
         justify-content: center;
         align-items: center;
-        background: radial-gradient(circle at center, #111, #000);
-      }
-
-      /* LOGO WRAP */
-      .logo-wrap {
-        opacity: 0;
-        transform: scale(0.8);
-        animation: introFade 1.8s ease forwards;
+        height: 100vh;
       }
 
       /* LOGO */
       .logo {
-        width: 200px;
-        filter: drop-shadow(0 0 12px rgba(212, 175, 55, 0.5))
-          drop-shadow(0 0 40px rgba(212, 175, 55, 0.25));
+        width: 180px;
       }
 
-      /* ANIMATION */
-      @keyframes introFade {
-        0% {
-          opacity: 0;
-          transform: scale(0.7);
-        }
-        60% {
-          opacity: 1;
-          transform: scale(1.05);
-        }
-        100% {
-          opacity: 1;
-          transform: scale(1);
-        }
+      /* MODERN STROKE */
+      .logo path {
+        stroke: #d4af37;
+        stroke-width: 3;
+        fill: none;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+      }
+
+      /* premium glow */
+      .logo {
+        filter: drop-shadow(0 0 20px rgba(212, 175, 55, 0.25));
+      }
+
+      /* hover ultra smooth */
+      .logo:hover {
+        transform: scale(1.08);
+        transition: 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
       }
     </style>
   </head>
 
   <body>
-    <div id="intro">
-      <div class="logo-wrap">
-        <svg viewBox="0 0 200 200" class="logo">
-          <g
-            stroke="#d4af37"
-            stroke-width="4"
-            fill="none"
-            stroke-linecap="round"
-          >
-            <!-- üst -->
-            <line x1="40" y1="70" x2="160" y2="70" />
+    <svg viewBox="0 0 200 200" class="logo">
+      <!-- minimalist üst çizgi -->
+      <path d="M50 70 L150 70" />
 
-            <!-- direk -->
-            <line x1="100" y1="30" x2="100" y2="150" />
+      <!-- ince merkez -->
+      <path d="M100 45 L100 140" />
 
-            <!-- taban -->
-            <line x1="70" y1="150" x2="130" y2="150" />
+      <!-- modern taban -->
+      <path d="M80 140 Q100 155 120 140" />
 
-            <!-- sol -->
-            <line x1="70" y1="70" x2="50" y2="110" />
-            <line x1="70" y1="70" x2="90" y2="110" />
+      <!-- SOL minimal kase -->
+      <path d="M60 70 L50 105 L70 105 Z" />
 
-            <!-- sağ -->
-            <line x1="130" y1="70" x2="110" y2="110" />
-            <line x1="130" y1="70" x2="150" y2="110" />
-
-            <!-- kaseler -->
-            <path d="M45 110 Q70 135 95 110" />
-            <path d="M105 110 Q130 135 155 110" />
-          </g>
-        </svg>
-      </div>
-    </div>
+      <!-- SAĞ minimal kase -->
+      <path d="M140 70 L130 105 L150 105 Z" />
+    </svg>
   </body>
 </html>

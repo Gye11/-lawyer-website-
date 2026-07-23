@@ -1,46 +1,33 @@
 body {
   margin: 0;
-  background: #050505;
-  font-family: Arial, sans-serif;
-}
-
-/* INTRO */
-#intro {
-  position: fixed;
-  inset: 0;
+  background: #0a0a0a;
   display: flex;
   justify-content: center;
   align-items: center;
-  background: radial-gradient(circle at center, #111, #000);
-}
-
-/* LOGO WRAP (giriş animasyonu) */
-.logo-wrap {
-  opacity: 0;
-  transform: scale(0.8);
-  animation: introFade 1.8s ease forwards;
+  height: 100vh;
 }
 
 /* LOGO */
 .logo {
-  width: 220px;
-
-  filter: drop-shadow(0 0 12px rgba(212, 175, 55, 0.5))
-    drop-shadow(0 0 40px rgba(212, 175, 55, 0.25));
+  width: 180px;
+  transition: 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
-/* ANİMASYON */
-@keyframes introFade {
-  0% {
-    opacity: 0;
-    transform: scale(0.7);
-  }
-  60% {
-    opacity: 1;
-    transform: scale(1.05);
-  }
-  100% {
-    opacity: 1;
-    transform: scale(1);
-  }
+/* ÇİZGİ STİLİ (modern) */
+.logo path {
+  stroke: #d4af37;
+  stroke-width: 3;
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* PREMIUM IŞIK */
+.logo {
+  filter: drop-shadow(0 0 20px rgba(212, 175, 55, 0.25));
+}
+
+/* HOVER */
+.logo:hover {
+  transform: scale(1.08);
 }
