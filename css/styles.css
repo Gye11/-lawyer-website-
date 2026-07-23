@@ -21,8 +21,8 @@ body {
   stroke-width: 1.8;
   fill: none;
 
-  stroke-dasharray: 400;
-  stroke-dashoffset: 400;
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
 
   animation: draw 2.2s ease forwards;
 
