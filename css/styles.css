@@ -16,21 +16,45 @@ body {
 
 .logo {
   width: 160px;
-
-  stroke: url(#goldGradient);
-  stroke-width: 1.8;
-  fill: none;
-
-  stroke-dasharray: 1500;
-  stroke-dashoffset: 1500;
-
-  animation: draw 2.2s ease forwards;
-
-  filter: drop-shadow(0 0 8px rgba(212, 175, 55, 0.4))
-    drop-shadow(0 0 20px rgba(212, 175, 55, 0.2));
+  filter: drop-shadow(0 0 10px rgba(212, 175, 55, 0.4));
 }
 
-@keyframes draw {
+/* 🔥 YENİ SİSTEM */
+.draw {
+  stroke-dasharray: 200;
+  stroke-dashoffset: 200;
+  animation: drawLine 1.2s ease forwards;
+}
+
+.draw:nth-child(1) {
+  animation-delay: 0s;
+}
+.draw:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.draw:nth-child(3) {
+  animation-delay: 0.4s;
+}
+.draw:nth-child(4) {
+  animation-delay: 0.6s;
+}
+.draw:nth-child(5) {
+  animation-delay: 0.8s;
+}
+.draw:nth-child(6) {
+  animation-delay: 1s;
+}
+.draw:nth-child(7) {
+  animation-delay: 1.2s;
+}
+.draw:nth-child(8) {
+  animation-delay: 1.4s;
+}
+.draw:nth-child(9) {
+  animation-delay: 1.6s;
+}
+
+@keyframes drawLine {
   to {
     stroke-dashoffset: 0;
   }
