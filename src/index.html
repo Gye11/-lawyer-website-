@@ -3,93 +3,52 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Lawyer Intro</title>
+    <title>Lawyer</title>
 
     <style>
       body {
         margin: 0;
-        background: #0b0b0f;
-        overflow: hidden;
+        background: #050505;
+        font-family: Arial, sans-serif;
       }
 
+      /* INTRO */
       #intro {
         position: fixed;
         inset: 0;
-        background: radial-gradient(circle at center, #111 0%, #050505 100%);
         display: flex;
         justify-content: center;
         align-items: center;
+        background: radial-gradient(circle at center, #111, #000);
+      }
+
+      /* LOGO WRAP */
+      .logo-wrap {
+        opacity: 0;
+        transform: scale(0.8);
+        animation: introFade 1.8s ease forwards;
       }
 
       /* LOGO */
       .logo {
-        width: 180px;
-        filter: drop-shadow(0 0 12px rgba(212, 175, 55, 0.4));
+        width: 200px;
+        filter: drop-shadow(0 0 12px rgba(212, 175, 55, 0.5))
+          drop-shadow(0 0 40px rgba(212, 175, 55, 0.25));
       }
 
-      /* ÇİZİM ANİMASYONU */
-      .draw {
-        stroke-dasharray: 200;
-        stroke-dashoffset: 200;
-        animation: drawLine 1.2s ease forwards;
-      }
-
-      /* sırayla çizim */
-      .draw:nth-child(1) {
-        animation-delay: 0s;
-      }
-      .draw:nth-child(2) {
-        animation-delay: 0.2s;
-      }
-      .draw:nth-child(3) {
-        animation-delay: 0.4s;
-      }
-      .draw:nth-child(4) {
-        animation-delay: 0.6s;
-      }
-      .draw:nth-child(5) {
-        animation-delay: 0.8s;
-      }
-      .draw:nth-child(6) {
-        animation-delay: 1s;
-      }
-      .draw:nth-child(7) {
-        animation-delay: 1.2s;
-      }
-      .draw:nth-child(8) {
-        animation-delay: 1.4s;
-      }
-      .draw:nth-child(9) {
-        animation-delay: 1.6s;
-      }
-
-      @keyframes drawLine {
-        to {
-          stroke-dashoffset: 0;
+      /* ANIMATION */
+      @keyframes introFade {
+        0% {
+          opacity: 0;
+          transform: scale(0.7);
         }
-      }
-
-      /* ALTIN IŞIK */
-      .gold-sweep {
-        position: absolute;
-        width: 200%;
-        height: 200%;
-        background: linear-gradient(
-          120deg,
-          transparent,
-          rgba(212, 175, 55, 0.35),
-          transparent
-        );
-        transform: rotate(25deg);
-        animation: sweep 2.5s ease forwards;
-      }
-
-      @keyframes sweep {
-        from {
-          transform: translateX(-100%) rotate(25deg);
+        60% {
+          opacity: 1;
+          transform: scale(1.05);
         }
-        to {
-          transform: translateX(100%) rotate(25deg);
+        100% {
+          opacity: 1;
+          transform: scale(1);
         }
       }
     </style>
@@ -97,37 +56,45 @@
 
   <body>
     <div id="intro">
-      <svg viewBox="0 0 200 200" class="logo">
-        <defs>
-          <linearGradient id="goldGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stop-color="#8c6b1f" />
-            <stop offset="50%" stop-color="#d4af37" />
-            <stop offset="100%" stop-color="#fff2a8" />
-          </linearGradient>
-        </defs>
+      <div class="logo-wrap">
+        <svg viewBox="0 0 200 200" class="logo">
+          <defs>
+            <linearGradient id="gold" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#8c6b1f" />
+              <stop offset="50%" stop-color="#d4af37" />
+              <stop offset="100%" stop-color="#fff2a8" />
+            </linearGradient>
+          </defs>
 
-        <g
-          stroke="url(#goldGradient)"
-          stroke-width="2"
-          fill="none"
-          stroke-linecap="round"
-        >
-          <path class="draw" d="M50 70 L150 70" />
-          <path class="draw" d="M100 40 L100 150" />
-          <path class="draw" d="M70 150 L130 150" />
+          <g
+            stroke="url(#gold)"
+            stroke-width="3"
+            fill="none"
+            stroke-linecap="round"
+          >
+            <!-- Üst -->
+            <line x1="50" y1="70" x2="150" y2="70" />
 
-          <path class="draw" d="M70 70 L55 110" />
-          <path class="draw" d="M70 70 L85 110" />
+            <!-- Direk -->
+            <line x1="100" y1="40" x2="100" y2="150" />
 
-          <path class="draw" d="M130 70 L115 110" />
-          <path class="draw" d="M130 70 L145 110" />
+            <!-- Taban -->
+            <line x1="70" y1="150" x2="130" y2="150" />
 
-          <path class="draw" d="M45 110 Q70 130 95 110" />
-          <path class="draw" d="M105 110 Q130 130 155 110" />
-        </g>
-      </svg>
+            <!-- Sol -->
+            <line x1="70" y1="70" x2="55" y2="110" />
+            <line x1="70" y1="70" x2="85" y2="110" />
 
-      <div class="gold-sweep"></div>
+            <!-- Sağ -->
+            <line x1="130" y1="70" x2="115" y2="110" />
+            <line x1="130" y1="70" x2="145" y2="110" />
+
+            <!-- Kaseler -->
+            <path d="M45 110 Q70 130 95 110" />
+            <path d="M105 110 Q130 130 155 110" />
+          </g>
+        </svg>
+      </div>
     </div>
   </body>
 </html>
