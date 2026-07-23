@@ -7,33 +7,37 @@ body {
   height: 100vh;
 }
 
-/* LOGO BOYUTU VE EFEKTLER */
+/* LOGO */
 .logo {
-  width: 220px;
+  width: 260px;
   transition: 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
-  filter: drop-shadow(0 0 20px rgba(212, 175, 55, 0.25));
+  filter: drop-shadow(0 0 30px rgba(212, 175, 55, 0.45));
 }
 
-/* MODERN STROKE (ÇİZGİ) STİLİ */
-.logo path,
-.logo circle,
+/* SADECE ÇİZGİ OLANLAR */
 .logo line,
-.logo rect,
-.logo ellipse {
+.logo path:not(.filled) {
   stroke: #d4af37;
-  stroke-width: 3;
+  stroke-width: 3.5;
   fill: none;
   stroke-linecap: round;
   stroke-linejoin: round;
 }
 
-/* DOLGULU ALANLAR İÇİN */
+/* DOLGU */
 .logo .filled {
   fill: #d4af37;
   stroke: none;
 }
 
-/* HOVER ULTRA SMOOTH */
+/* DAİRELER DAHA SOFT */
+.logo circle {
+  stroke: #d4af37;
+  fill: none;
+  opacity: 0.5;
+}
+
+/* HOVER */
 .logo:hover {
-  transform: scale(1.08);
+  transform: scale(1.07);
 }
