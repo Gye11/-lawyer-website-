@@ -7,14 +7,19 @@ body {
   height: 100vh;
 }
 
-/* LOGO */
+/* LOGO BOYUTU VE EFEKTLER */
 .logo {
-  width: 180px;
+  width: 220px;
   transition: 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+  filter: drop-shadow(0 0 20px rgba(212, 175, 55, 0.25));
 }
 
-/* ÇİZGİ STİLİ (modern) */
-.logo path {
+/* MODERN STROKE (ÇİZGİ) STİLİ */
+.logo path,
+.logo circle,
+.logo line,
+.logo rect,
+.logo ellipse {
   stroke: #d4af37;
   stroke-width: 3;
   fill: none;
@@ -22,12 +27,13 @@ body {
   stroke-linejoin: round;
 }
 
-/* PREMIUM IŞIK */
-.logo {
-  filter: drop-shadow(0 0 20px rgba(212, 175, 55, 0.25));
+/* DOLGULU ALANLAR İÇİN */
+.logo .filled {
+  fill: #d4af37;
+  stroke: none;
 }
 
-/* HOVER */
+/* HOVER ULTRA SMOOTH */
 .logo:hover {
   transform: scale(1.08);
 }
