@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Lawyer</title>
 
-    <link rel="stylesheet" href="./css/styles.css" />
+    <link rel="stylesheet" href="../css/styles.css" />
   </head>
 
   <body>
@@ -13,22 +13,54 @@
     <div id="intro">
       <div class="intro-inner">
         <svg viewBox="0 0 200 200" class="logo">
-          <path
-            d="
-        M60 150 L140 150
-        M100 40 L100 150
-        M60 70 L140 70
-        M60 70 L40 110 L80 110
-        M140 70 L160 110 L120 110
-      "
-          />
+          <!-- GOLD GRADIENT -->
+          <defs>
+            <linearGradient
+              id="goldGradient"
+              x1="0%"
+              y1="0%"
+              x2="100%"
+              y2="100%"
+            >
+              <stop offset="0%" stop-color="#8c6b1f" />
+              <stop offset="50%" stop-color="#d4af37" />
+              <stop offset="100%" stop-color="#fff2a8" />
+            </linearGradient>
+          </defs>
+
+          <g
+            stroke="url(#goldGradient)"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <!-- Üst -->
+            <path d="M50 70 L150 70" />
+
+            <!-- Direk -->
+            <path d="M100 40 L100 150" />
+
+            <!-- Taban -->
+            <path d="M70 150 L130 150" />
+
+            <!-- Sol zincir -->
+            <path d="M70 70 L55 110" />
+            <path d="M70 70 L85 110" />
+
+            <!-- Sağ zincir -->
+            <path d="M130 70 L115 110" />
+            <path d="M130 70 L145 110" />
+
+            <!-- Sol kase -->
+            <path d="M45 110 Q70 130 95 110" />
+
+            <!-- Sağ kase -->
+            <path d="M105 110 Q130 130 155 110" />
+          </g>
         </svg>
 
         <div class="gold-sweep"></div>
       </div>
     </div>
-
-    <!-- MAIN -->
 
     <script src="./app.js"></script>
   </body>

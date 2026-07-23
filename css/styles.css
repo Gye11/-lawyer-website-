@@ -15,14 +15,19 @@ body {
 }
 
 .logo {
-  width: 140px;
-  stroke: #d4af37;
-  stroke-width: 1.5;
+  width: 160px;
+
+  stroke: url(#goldGradient);
+  stroke-width: 1.8;
   fill: none;
-  stroke-dasharray: 300;
-  stroke-dashoffset: 300;
-  animation: draw 2s ease forwards;
-  filter: drop-shadow(0 0 10px rgba(212, 175, 55, 0.4));
+
+  stroke-dasharray: 400;
+  stroke-dashoffset: 400;
+
+  animation: draw 2.2s ease forwards;
+
+  filter: drop-shadow(0 0 8px rgba(212, 175, 55, 0.4))
+    drop-shadow(0 0 20px rgba(212, 175, 55, 0.2));
 }
 
 @keyframes draw {
