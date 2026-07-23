@@ -1,13 +1,11 @@
-window.addEventListener("load", () => {
+setTimeout(() => {
   const intro = document.getElementById("intro");
-  const main = document.getElementById("main-content");
+
+  intro.style.transition = "opacity 1s ease";
+  intro.style.opacity = "0";
 
   setTimeout(() => {
-    intro.classList.add("fade-out");
-
-    setTimeout(() => {
-      intro.style.display = "none";
-      main.classList.add("show");
-    }, 800);
-  }, 3200);
-});
+    intro.style.display = "none";
+    document.body.style.overflow = "auto";
+  }, 1000);
+}, 3000);
