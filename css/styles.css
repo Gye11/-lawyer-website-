@@ -1,7 +1,6 @@
 body {
   margin: 0;
-  background: #0a0a0a;
-  background-image: radial-gradient(circle at center, #141414 0%, #050505 100%);
+  background: #0b0f14;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -9,49 +8,79 @@ body {
   overflow: hidden;
 }
 
-/* LOGO ANA KONTEYNER VE GİRİŞ ANİMASYONU */
-.logo-container {
-  width: 240px;
+/* SVG boyutu */
+svg {
+  width: 300px;
+}
+
+/* Altın renk */
+.stroke {
+  stroke: url(#gold);
+  stroke-width: 4;
+  fill: none;
+}
+
+.thin {
+  stroke: url(#gold);
+  stroke-width: 2;
+}
+
+.fill {
+  fill: url(#gold);
+}
+
+/* Çember animasyon */
+.circle {
+  fill: none;
+  stroke: url(#gold);
+  stroke-width: 3;
+  stroke-dasharray: 700;
+  stroke-dashoffset: 700;
+  animation: drawCircle 2s ease forwards;
+}
+
+/* Logo başlangıç */
+.logo {
   opacity: 0;
-  transform: scale(0.85);
-  animation:
-    siteEntrance 1.8s cubic-bezier(0.25, 1, 0.5, 1) forwards,
-    goldShimmer 3.5s ease-in-out infinite 1.8s;
+  transform: scale(0.8);
+  animation: showLogo 1.5s ease forwards;
+  animation-delay: 1.5s;
 }
 
-/* SVG ALTIN RENK */
-.logo-container svg path,
-.logo-container svg circle {
-  fill: url(#goldGradient);
-  stroke: url(#goldGradient);
-  stroke-width: 1;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-}
-
-/* GİRİŞ ANİMASYONU */
-@keyframes siteEntrance {
-  0% {
-    opacity: 0;
-    transform: scale(0.8) translateY(20px);
-    filter: drop-shadow(0 0 0px rgba(212, 175, 55, 0));
+/* Animasyonlar */
+@keyframes drawCircle {
+  to {
+    stroke-dashoffset: 0;
   }
-  100% {
+}
+
+@keyframes showLogo {
+  to {
     opacity: 1;
-    transform: scale(1) translateY(0);
-    filter: drop-shadow(0 0 20px rgba(212, 175, 55, 0.3));
-  }
-}
-
-/* ALTIN PARLAMA */
-@keyframes goldShimmer {
-  0%,
-  100% {
-    filter: drop-shadow(0 0 15px rgba(212, 175, 55, 0.25));
     transform: scale(1);
   }
+}
+
+/* Parlama efekti */
+.intro::after {
+  content: "";
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.2), transparent);
+  opacity: 0;
+  animation: flash 2s ease;
+  animation-delay: 2s;
+}
+
+@keyframes flash {
+  0% {
+    opacity: 0;
+  }
   50% {
-    filter: drop-shadow(0 0 30px rgba(255, 215, 0, 0.6));
-    transform: scale(1.02);
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
   }
 }
