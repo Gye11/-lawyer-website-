@@ -1,59 +1,37 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
 body {
-  font-family: "Segoe UI", sans-serif;
-  background: #0d0d0d;
-  color: white;
-  overflow: hidden;
+  margin: 0;
+  background: #0b0f14;
 }
 
-/* INTRO */
+/* intro ekran */
 .intro {
-  height: 100vh;
+  position: fixed;
+  width: 100%;
+  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  background: linear-gradient(135deg, #000000, #1a1a1a);
 }
 
-/* LOGO BOX */
-.logo-box {
-  text-align: center;
-  transform: scale(0.8);
-  opacity: 0;
-  animation: fadeIn 1.5s ease forwards;
+/* svg */
+.logo {
+  width: 180px;
 }
 
-/* TEXT */
-.logo-text {
-  font-size: 48px;
-  letter-spacing: 4px;
-  color: #d4af37;
+/* çizim animasyonu */
+.draw {
+  fill: none;
+  stroke: #c5a15a;
+  stroke-width: 2;
+
+  stroke-dasharray: 300;
+  stroke-dashoffset: 300;
+
+  animation: draw 2s ease forwards;
 }
 
-/* ALT ÇİZGİ */
-.line {
-  margin: 20px auto;
-  width: 0;
-  height: 2px;
-  background: #d4af37;
-  animation: lineGrow 2s ease forwards 1s;
-}
-
-/* ANIMATIONS */
-@keyframes fadeIn {
+@keyframes draw {
   to {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
-
-@keyframes lineGrow {
-  to {
-    width: 200px;
+    stroke-dashoffset: 0;
   }
 }

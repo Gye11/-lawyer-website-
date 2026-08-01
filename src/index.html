@@ -2,21 +2,38 @@
 <html lang="tr">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Law Intro</title>
-
-    <!-- CSS -->
     <link rel="stylesheet" href="./css/styles.css" />
   </head>
   <body>
     <div class="intro">
-      <div class="logo-box">
-        <h1 class="logo-text">LAW & JUSTICE</h1>
-        <div class="line"></div>
-      </div>
+      <svg viewBox="0 0 200 200" class="logo">
+        <!-- ORTA DİREK -->
+        <path class="draw" d="M100 40 L100 140" />
+
+        <!-- TABAN -->
+        <path class="draw" d="M70 140 L130 140" />
+
+        <!-- ÜST YATAY -->
+        <path class="draw" d="M60 80 L140 80" />
+
+        <!-- SOL TERAZİ -->
+        <path class="draw" d="M70 80 L60 110 L80 110 Z" />
+
+        <!-- SAĞ TERAZİ -->
+        <path class="draw" d="M130 80 L120 110 L140 110 Z" />
+
+        <!-- SOL ASKI -->
+        <line class="draw" x1="70" y1="80" x2="70" y2="95" />
+
+        <!-- SAĞ ASKI -->
+        <line class="draw" x1="130" y1="80" x2="130" y2="95" />
+
+        <!-- ÜST SÜS -->
+        <circle class="draw" cx="100" cy="30" r="8" />
+      </svg>
     </div>
 
-    <!-- JS -->
     <script src="./src/app.js"></script>
   </body>
 </html>
