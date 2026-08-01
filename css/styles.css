@@ -1,64 +1,59 @@
-body {
+* {
   margin: 0;
-  background: #0b0f14;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", sans-serif;
+  background: #0d0d0d;
+  color: white;
+  overflow: hidden;
+}
+
+/* INTRO */
+.intro {
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  background: linear-gradient(135deg, #000000, #1a1a1a);
 }
 
-/* SVG boyut */
-svg {
-  width: 300px;
-}
-
-/* Çember animasyon */
-.circle {
-  fill: none;
-  stroke: #d4af37;
-  stroke-width: 3;
-
-  stroke-dasharray: 700;
-  stroke-dashoffset: 700;
-  animation: draw 2s ease forwards;
-}
-
-/* Logo genel */
-.logo {
-  opacity: 0;
+/* LOGO BOX */
+.logo-box {
+  text-align: center;
   transform: scale(0.8);
-  animation: show 1.5s ease forwards;
-  animation-delay: 1.5s;
+  opacity: 0;
+  animation: fadeIn 1.5s ease forwards;
 }
 
-/* Kalın çizgiler */
-.stroke {
-  stroke: #d4af37;
-  stroke-width: 4;
-  fill: none;
+/* TEXT */
+.logo-text {
+  font-size: 48px;
+  letter-spacing: 4px;
+  color: #d4af37;
 }
 
-/* İnce çizgiler */
-.thin {
-  stroke: #d4af37;
-  stroke-width: 2;
+/* ALT ÇİZGİ */
+.line {
+  margin: 20px auto;
+  width: 0;
+  height: 2px;
+  background: #d4af37;
+  animation: lineGrow 2s ease forwards 1s;
 }
 
-/* Dolgu */
-.fill {
-  fill: #d4af37;
-}
-
-/* Animasyonlar */
-@keyframes draw {
-  to {
-    stroke-dashoffset: 0;
-  }
-}
-
-@keyframes show {
+/* ANIMATIONS */
+@keyframes fadeIn {
   to {
     opacity: 1;
     transform: scale(1);
+  }
+}
+
+@keyframes lineGrow {
+  to {
+    width: 200px;
   }
 }
