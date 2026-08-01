@@ -3,29 +3,25 @@ body {
   background: #0b0f14;
 }
 
-/* intro ekran */
 .intro {
-  position: fixed;
-  width: 100%;
-  height: 100%;
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-/* svg */
 .logo {
-  width: 180px;
+  width: 220px;
+  filter: drop-shadow(0 0 15px rgba(197, 161, 90, 0.4));
 }
 
-/* çizim animasyonu */
 .draw {
   fill: none;
   stroke: #c5a15a;
   stroke-width: 2;
 
-  stroke-dasharray: 300;
-  stroke-dashoffset: 300;
+  stroke-dasharray: 400;
+  stroke-dashoffset: 400;
 
   animation: draw 2s ease forwards;
 }
