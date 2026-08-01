@@ -12,22 +12,28 @@ body {
 
 .logo {
   width: 220px;
-  filter: drop-shadow(0 0 15px rgba(197, 161, 90, 0.4));
+  opacity: 0;
+  transform: scale(0.9);
+
+  animation:
+    fadeIn 1.5s ease forwards,
+    glow 2.5s ease-in-out infinite alternate;
 }
 
-.draw {
-  fill: none;
-  stroke: #c5a15a;
-  stroke-width: 2;
-
-  stroke-dasharray: 400;
-  stroke-dashoffset: 400;
-
-  animation: draw 2s ease forwards;
-}
-
-@keyframes draw {
+/* giriş animasyonu */
+@keyframes fadeIn {
   to {
-    stroke-dashoffset: 0;
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* altın parıltı efekti */
+@keyframes glow {
+  from {
+    filter: drop-shadow(0 0 5px rgba(197, 161, 90, 0.2));
+  }
+  to {
+    filter: drop-shadow(0 0 20px rgba(197, 161, 90, 0.6));
   }
 }
