@@ -10,15 +10,20 @@ body {
   align-items: center;
 }
 
-.logo {
+/* animasyon artık burada */
+.logo-wrapper {
   width: 220px;
-  height: auto;
-  object-fit: contain;
   opacity: 0;
   transform: scale(0.9);
   animation:
     fadeIn 1.5s ease forwards,
     glow 2.5s ease-in-out infinite alternate;
+}
+
+.logo-wrapper video {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
 }
 
 /* giriş animasyonu */
@@ -29,7 +34,7 @@ body {
   }
 }
 
-/* altın parıltı efekti */
+/* altın parıltı */
 @keyframes glow {
   from {
     filter: drop-shadow(0 0 5px rgba(197, 161, 90, 0.2));
